@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard" >
+        <route id="cart_download" frontName="cart" >
+            <module name="Legendaaary_CartToCSV"/>
+        </route>
+    </router>
+</config>
