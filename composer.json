@@ -1,0 +1,20 @@
+{
+  "name": "legendaaary/module-cart-tocsv",
+  "version": "1.0.0",
+  "description": "This module allows customers to download the contents of their shopping cart in CSV format.",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*"
+  },
+  "license": [
+    "Massachusetts Institute of Technology License (MITL)"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Legendaaary\\CartToCSV\\": ""
+    }
+  }
+}
