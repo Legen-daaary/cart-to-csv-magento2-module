@@ -4,9 +4,9 @@
     <body>
         <referenceContainer name="content">
             <block
-                   name="Legen-daaary_CartToCSV_CheckoutButton"
-                   template="Legendaaary_CartToCSV::checkout-button.phtml"
-                   before="-"
+                name="Legen-daaary_CartToCSV_CheckoutButton"
+                template="Legendaaary_CartToCSV::checkout-button.phtml"
+                before="-"
             />
         </referenceContainer>
     </body>
