@@ -4,6 +4,7 @@
     <body>
         <referenceContainer name="content">
             <block
+                class="Legendaaary\CartToCSV\Block\Button"
                 name="Legen-daaary_CartToCSV_CheckoutButton"
                 template="Legendaaary_CartToCSV::checkout-button.phtml"
                 before="-"
