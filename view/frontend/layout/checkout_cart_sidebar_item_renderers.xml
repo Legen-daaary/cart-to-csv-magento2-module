@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd" >
+    <referenceContainer name="minicart.addons">
+        <block
+            class="Legendaaary\CartToCSV\Block\Button"
+            name="Legen-daaary_CartToCSV_MinicartButton"
+            template="Legendaaary_CartToCSV::minicart-button.phtml"
+        />
+    </referenceContainer>
+</layout>
