@@ -18,6 +18,8 @@ class Index implements HttpGetActionInterface
 {
     private string $FILE_NAME = "cart.csv";
     private array $CSV_HEADER = ["sku", "name", "price", "quantity", "row_total"];
+    private string $TYPE = "filename";
+
     private CheckoutSession $checkoutSession;
     private FileFactory $fileFactory;
     private DirectoryList $directoryList;
@@ -92,13 +94,13 @@ class Index implements HttpGetActionInterface
     private function createCsv($cartData): array
     {
         $varPath = $this->directoryList->getPath(DirectoryList::VAR_DIR);
-        $filePath = $varPath . '/export/' . $this->FILE_NAME;
+        $filePath = $varPath . "/" . $this->FILE_NAME;
 
 
         $this->csv->appendData($filePath, array_merge([$this->CSV_HEADER], $cartData));
 
         return [
-            'type' => 'filename',
+            'type' => $this->TYPE,
             'value' => $filePath,
             'rm' => true
         ];
