@@ -21,8 +21,9 @@ The customer can download the contents of their cart in a csv file containing th
 
 ![Cart example](https://github.com/Legen-daaary/cart-to-csv-magento2-module/assets/88480871/616f6a69-5e73-4d19-b10c-10c1173db9a3)
 
+## Setup
 
-## Prerequisites
+### Prerequisites
 
 In the Magento 2 project where you want to use this module, create a **code** folder in the src/app folder if it does not already exist.
 
@@ -32,7 +33,7 @@ The folder structure should then look like this:
 
 ![folder_structure](https://github.com/Legen-daaary/cart-to-csv-magento2-module/assets/88480871/57494ecb-f3c6-48cc-b3d8-9b94000b7c77)
 
-## Installation
+### Installation
 
 Clone the project to the desired folder
 ```
@@ -55,7 +56,7 @@ And as the info text highly recommends, run ```bin/magento setup:upgrade```.
 
 > **WARNING:** It is possible that your ```bin/magento``` command itself is not recognized by your development environment. In this case, try ```php bin/magento```
 
-## Enable Module
+### Enable Module
 
 Go to the Admin Panel and do as the following:
 
