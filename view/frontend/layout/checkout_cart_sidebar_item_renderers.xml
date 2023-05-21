@@ -6,6 +6,7 @@
             class="Legendaaary\CartToCSV\Block\Button"
             name="Legen-daaary_CartToCSV_MinicartButton"
             template="Legendaaary_CartToCSV::minicart-button.phtml"
+            ifconfig="legendaaary_cart_to_csv/general/enable"
         />
     </referenceContainer>
 </layout>
