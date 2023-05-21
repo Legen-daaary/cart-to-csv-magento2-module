@@ -16,9 +16,10 @@ use Psr\Log\LoggerInterface;
 
 class Index implements HttpGetActionInterface
 {
-    private string $FILE_NAME = "cart.csv";
-    private array $CSV_HEADER = ["sku", "name", "price", "quantity", "row_total"];
-    private string $TYPE = "filename";
+    private const FILE_NAME = "cart.csv";
+    private const CSV_HEADER = ["sku", "name", "price", "quantity", "row_total"];
+    private const TYPE = "filename";
+    private const IS_FILE_GETS_REMOVED_AFTER_DOWNLOAD = true;
 
     private CheckoutSession $checkoutSession;
     private FileFactory $fileFactory;
@@ -60,7 +61,7 @@ class Index implements HttpGetActionInterface
             }
         }
         return $this->fileFactory->create(
-            $this->FILE_NAME,
+            Index::FILE_NAME,
             $fileContent ?? "",
             DirectoryList::VAR_DIR);
     }
@@ -75,7 +76,13 @@ class Index implements HttpGetActionInterface
         $quote = $this->checkoutSession->getQuote();
         $cartData = [];
 
-        foreach ($quote->getItems() as $item) {
+        $items = $quote->getItems();
+
+        if (!is_array($items)) {
+            throw new NoSuchEntityException();
+        }
+
+        foreach ($items as $item) {
             $cartData[] = [
                 $item->getSku(),
                 $item->getName(),
@@ -94,15 +101,15 @@ class Index implements HttpGetActionInterface
     private function createCsv($cartData): array
     {
         $varPath = $this->directoryList->getPath(DirectoryList::VAR_DIR);
-        $filePath = $varPath . "/" . $this->FILE_NAME;
+        $filePath = $varPath . "/" . Index::FILE_NAME;
 
 
-        $this->csv->appendData($filePath, array_merge([$this->CSV_HEADER], $cartData));
+        $this->csv->appendData($filePath, array_merge([Index::CSV_HEADER], $cartData));
 
         return [
-            'type' => $this->TYPE,
+            'type' => Index::TYPE,
             'value' => $filePath,
-            'rm' => true
+            'rm' => Index::IS_FILE_GETS_REMOVED_AFTER_DOWNLOAD
         ];
 
     }
