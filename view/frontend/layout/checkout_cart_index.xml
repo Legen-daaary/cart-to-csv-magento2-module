@@ -1,15 +1,13 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
-        <referenceContainer name="content">
-            <block
-                class="Legendaaary\CartToCSV\Block\Button"
-                name="Legen-daaary_CartToCSV_CheckoutButton"
-                template="Legendaaary_CartToCSV::checkout-button.phtml"
-                before="-"
-                ifconfig="legendaaary_cart_to_csv/general/enable"
-            />
-        </referenceContainer>
-    </body>
-</page>
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <referenceContainer name="content">
+        <block
+            class="Legendaaary\CartToCSV\Block\Button"
+            name="Legen-daaary_CartToCSV_CheckoutButton"
+            template="Legendaaary_CartToCSV::checkout-button.phtml"
+            before="-"
+            ifconfig="legendaaary_cart_to_csv/general/enable"
+        />
+    </referenceContainer>
+</layout>
